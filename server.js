@@ -13,6 +13,10 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cookieParser());
 
+app.get('/',(req,res)=>{
+    res.status(200).send("THIS IS HOME")
+})
+
 app.post('/usersignup',(req,res)=>{
 const user = new User(req.body)
 

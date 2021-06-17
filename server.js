@@ -4,11 +4,16 @@ const cookieParser = require('cookie-parser')
 
 const mongoose = require('mongoose')
 const {User}  = require('./models/user_model')
-
+require('dotenv').config();
 const {auth} = require('./middleware/auth')
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost:27017/TL')
 const app = express()
+
+
+const cors = require('cors');
+app.use(cors({origin:'https://kind-goldstine-d209f7.netlify.app/'}));
+
 
 app.use(bodyParser.json())
 app.use(cookieParser());

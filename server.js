@@ -7,12 +7,12 @@ const {User}  = require('./models/user_model')
 require('dotenv').config();
 const {auth} = require('./middleware/auth')
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost:27017/TL')
+mongoose.connect('mongodb+srv://abhinav000:ayush123>@cluster0.wlztf.mongodb.net/TL?retryWrites=true&w=majority')
 const app = express()
 
 
 const cors = require('cors');
-app.use(cors({origin:'https://kind-goldstine-d209f7.netlify.app/'}));
+app.use(cors({origin:'https://kind-goldstine-d209f7.netlify.app'}));
 
 
 app.use(bodyParser.json())

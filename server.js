@@ -18,11 +18,11 @@ app.use(cors({origin:'https://kind-goldstine-d209f7.netlify.app'}));
 app.use(bodyParser.json())
 app.use(cookieParser());
 
-app.get('/',(req,res)=>{
+app.get('/', async (req,res)=>{
     res.status(200).send("THIS IS HOME")
 })
 
-app.post('/usersignup',(req,res)=>{
+app.post('/usersignup', async (req,res)=>{
 const user = new User(req.body)
 
 
@@ -36,7 +36,7 @@ message: 'You have signed up'
 })
 
 
-app.post('/userlogin',(req,res)=>{
+app.post('/userlogin', async (req,res)=>{
 User.findOne({"email":req.body.email},(err,user)=>{
     if(!user) return res.status(400).json({message:'User not found'})
 user.checkPass(req.body.firstPass,(err,isTrue)=>{
@@ -59,7 +59,7 @@ else{
 
 })
 
-app.get('/user',auth,(req,res)=>{
+app.get('/user',auth, async (req,res)=>{
 res.status(200).json({
     isAuth: true
 })

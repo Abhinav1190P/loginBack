@@ -7,7 +7,7 @@ const {User}  = require('./models/user_model')
 require('dotenv').config();
 const {auth} = require('./middleware/auth')
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb+srv://abhinav000:ayush123>@cluster0.wlztf.mongodb.net/TL?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://abhinavuser:abhinav100@cluster0.jrmhu.mongodb.net/TL?retryWrites=true&w=majority')
 const app = express()
 
 

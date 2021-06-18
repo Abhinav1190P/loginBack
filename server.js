@@ -29,7 +29,7 @@ const user = new User(req.body)
 user.save((err,doc)=>{
 if(err) return res.status(400).send(err);
 return res.status(200).json({
-message: 'You have signed up'
+isSign: true
 })
 
 })
